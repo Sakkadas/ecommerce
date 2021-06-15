@@ -7,7 +7,7 @@ from django.core.management.utils import get_random_secret_key
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-PROJECT_DIR = BASE_DIR.parent
+
 
 SECRET_KEY = os.environ.get('SECRET_KEY', default=get_random_secret_key())
 
@@ -89,8 +89,11 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_DIRS = [
+
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
