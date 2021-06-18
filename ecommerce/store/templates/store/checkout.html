@@ -36,9 +36,10 @@
                 </div>
 
                 <hr>
-                <input style="width:100%" id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                <input style="width:100%" id="form-button" class="btn btn-success btn-block" type="submit"
+                       value="Continue">
             </form>
-        <br>
+            <br>
 
             <div class="box-element hidden" id="payment-info">
                 <small>Paypal Options</small>
@@ -65,5 +66,13 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var shipping = '{{order.shipping}}'
+
+    if (shipping == 'False') {
+        document.getElementById('shipping-info').innerHTML = ''
+    }
+</script>
 
 {% endblock content %}
